@@ -189,4 +189,10 @@ public class GameState
 
 	}
 
+    public List<(int Winner, int Moves)> GameHistory { get; private set; } = new();                                   
+                                                                                                                        
+    public void RecordWin(int winner, int moves)                                                                      
+    {                                                                                                                 
+        GameHistory.Add((winner, moves));                                                                             
+    }                                                                                                                 
 }

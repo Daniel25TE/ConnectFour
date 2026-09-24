@@ -39,6 +39,33 @@ span.container[b-q4iafmij9j] {
     z-index: 5;
     pointer-events: none;
 }
+
+.scoreboard[b-q4iafmij9j] {                                                                                                    
+      display: flex;                                                                                                    
+      gap: 2em;                                                                                                         
+      margin-top: 1.5em;                                                                                                
+      width: 30em;                                                                                                      
+  }                                                                                                                     
+                                                                                                                        
+  .score-column[b-q4iafmij9j] {                                                                                                       
+      flex: 1;                                                                                                          
+  }                                                                                                                     
+                                                                                                                        
+  .score-column h4[b-q4iafmij9j] {                                                                                                    
+      margin-bottom: 0.5em;                                                                                             
+      font-weight: bold;                                                                                                
+  }                                                                                                                     
+                                                                                                                        
+  p.win[b-q4iafmij9j] {                                                                                                               
+      color: green;                                                                                                
+      font-weight: bold;                                                                                                
+      margin: 0.2em 0;                                                                                                  
+  }                                                                                                                     
+                                                                                                                        
+  p.loss[b-q4iafmij9j] {                                                                                                              
+      color: gray;                                                                                                 
+      margin: 0.2em 0;                                                                                                  
+  }
 /* _content/ConnectFour/Components/Layout/MainLayout.razor.rz.scp.css */
 .page[b-vuio0p1jtn] {
     position: relative;

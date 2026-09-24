@@ -28,3 +28,4 @@
 /Users/danielalejandrol/practice/dotnet-week-4/ConnectFour/obj/Debug/net8.0/ConnectFour.genruntimeconfig.cache
 /Users/danielalejandrol/practice/dotnet-week-4/ConnectFour/obj/Debug/net8.0/ref/ConnectFour.dll
 /Users/danielalejandrol/practice/dotnet-week-4/ConnectFour/obj/Debug/net8.0/scopedcss/Components/Board.razor.rz.scp.css
+/Users/danielalejandrol/practice/dotnet-week-4/ConnectFour/obj/Debug/net8.0/ConnectFour.sourcelink.json

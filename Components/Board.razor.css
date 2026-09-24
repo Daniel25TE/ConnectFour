@@ -38,3 +38,30 @@ span.container {
     z-index: 5;
     pointer-events: none;
 }
+
+.scoreboard {                                                                                                    
+      display: flex;                                                                                                    
+      gap: 2em;                                                                                                         
+      margin-top: 1.5em;                                                                                                
+      width: 30em;                                                                                                      
+  }                                                                                                                     
+                                                                                                                        
+  .score-column {                                                                                                       
+      flex: 1;                                                                                                          
+  }                                                                                                                     
+                                                                                                                        
+  .score-column h4 {                                                                                                    
+      margin-bottom: 0.5em;                                                                                             
+      font-weight: bold;                                                                                                
+  }                                                                                                                     
+                                                                                                                        
+  p.win {                                                                                                               
+      color: green;                                                                                                
+      font-weight: bold;                                                                                                
+      margin: 0.2em 0;                                                                                                  
+  }                                                                                                                     
+                                                                                                                        
+  p.loss {                                                                                                              
+      color: gray;                                                                                                 
+      margin: 0.2em 0;                                                                                                  
+  }

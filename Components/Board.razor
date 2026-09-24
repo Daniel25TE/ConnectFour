@@ -41,6 +41,40 @@
     }
 </div>
 
+@if (State.GameHistory.Any())                                                                                         
+  {                                                                                                                     
+      <div class="scoreboard">
+          <div class="score-column">                                                                                    
+              <h4>Player 1</h4>                                                                                         
+              @foreach (var game in State.GameHistory)                                                                  
+              {                                                                                                         
+                  if (game.Winner == 1)                                                                                 
+                  {                                                                                                     
+                      <p class="win">Won with @game.Moves movements</p>                                            
+                  }                                                                                                     
+                  else                                                                                             
+                  {                                                                                                     
+                      <p class="loss">Lost</p>                                                                     
+                  }                                                                                                     
+              }                                                                                                    
+          </div>                                                                                                        
+          <div class="score-column">                                                                               
+              <h4>Player 2</h4>                                                                                         
+              @foreach (var game in State.GameHistory)                                                                  
+              {                                                                                                         
+                  if (game.Winner == 2)                                                                                 
+                  {                                                                                                     
+                      <p class="win">Won with @game.Moves movements</p>                                            
+                  }                                                                                                     
+                  else                                                                                                  
+                  {                                                                                                     
+                      <p class="loss">Lost</p>                                                                          
+                  }                                                                                                     
+              }                                                                                                         
+          </div>                                                                                                        
+      </div>                                                                                                            
+  }
+
 @code {
 
     private string[] pieces = new string[42];
@@ -71,13 +105,18 @@
     {
         errorMessage = ex.Message;
     }
-    winnerMessage = State.CheckForWin() switch
-    {
-        GameState.WinState.Player1_Wins => "Player 1 Wins!",
-        GameState.WinState.Player2_Wins => "Player 2 Wins!",
-        GameState.WinState.Tie => "It's a tie!",
-        _ => ""
-    };
+    var gameResult = State.CheckForWin();                                                                             
+      winnerMessage = gameResult switch                                                                                 
+      {                                                                                                                 
+          GameState.WinState.Player1_Wins => "Player 1 Wins!",                                                          
+          GameState.WinState.Player2_Wins => "Player 2 Wins!",                                                          
+          GameState.WinState.Tie => "It's a tie!",                                                                      
+          _ => ""                                                                                                       
+      };                                                                                                                
+      if (gameResult == GameState.WinState.Player1_Wins)                                                                
+          State.RecordWin(1, (State.CurrentTurn + 1) / 2);                                                                      
+      else if (gameResult == GameState.WinState.Player2_Wins)                                                           
+          State.RecordWin(2, State.CurrentTurn / 2);
     }
 
     [Parameter]
